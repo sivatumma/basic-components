@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="abort" ng-controller="abortController">
+    <head>
+        <title>
+            96HL - Siva
+        </title>
+        <meta content="max-age=0" http-equiv="cache-control"/>
+        <meta content="no-cache" http-equiv="cache-control"/>
+        <meta content="0" http-equiv="expires"/>
+        <meta content="Tue, 01 Jan 1980 1:00:00 GMT" http-equiv="expires"/>
+        <meta content="no-cache" http-equiv="pragma"/>
+        <style>
+        </style>
+    </head>
+    <body>
+        <input id="myNumber" pattern="[0-9]+([,\.][0-9]+)?" type="tel" />
+    </body>
+</html>
+<script type="text/javascript">
+  var subject = document.getElementById("myNumber");
+	subject.onchange = function(event){
+  	if(event.which >= 37 && event.which <= 40){
+      event.preventDefault();
+    }
+  	var num = subject.value.replace(/(\,)/g, '');
+	  subject.value = num.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+	}
+
+
+</script>
